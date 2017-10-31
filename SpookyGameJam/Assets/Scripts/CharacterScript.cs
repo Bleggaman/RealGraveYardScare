@@ -18,6 +18,7 @@ public class CharacterScript : MonoBehaviour, iScarable {
 		
 		flashLightRef = GameObject.Find ("FlashLight").GetComponent<ScareEquipItem>();
 		equipItems [0] = flashLightRef;
+
 			
 	}
 	
@@ -36,6 +37,7 @@ public class CharacterScript : MonoBehaviour, iScarable {
 		if (Input.GetKeyDown (KeyCode.W)) {
 			if (equipItems[0] != null) {
 				equipItems [0].activate (gameObject);
+
 			}
 		}
 

@@ -59,6 +59,7 @@
      <Compile Include="Assets\Scripts\CampFire.cs" />
      <Compile Include="Assets\Scripts\CharacterScript.cs" />
      <Compile Include="Assets\Scripts\FlashLight.cs" />
+     <Compile Include="Assets\Scripts\flashLightHitBox.cs" />
      <Compile Include="Assets\Scripts\GhostMovement.cs" />
      <Compile Include="Assets\Scripts\GhostTestAI.cs" />
      <Compile Include="Assets\Scripts\HidingSpot.cs" />

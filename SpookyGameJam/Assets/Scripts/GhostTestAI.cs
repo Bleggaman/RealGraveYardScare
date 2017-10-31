@@ -193,7 +193,7 @@ public class GhostTestAI : MonoBehaviour, iScarable {
 		if (state == GhostState.chasing) {
 			Debug.Log ("sscare failed!");
 		} else {
-			Debug.Log ("eek + " + scarePower);
+			Debug.Log ("Ghost eeked + " + scarePower);
 			state = GhostState.notMove;
 		}
 	}

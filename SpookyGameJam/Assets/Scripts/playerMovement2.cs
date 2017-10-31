@@ -9,12 +9,14 @@ public class playerMovement2 : MonoBehaviour {
 	public Rigidbody rb;
 	SpriteScript ss;
 	public char direction;
+	public GameObject flashLightHitBox;
 
 	// Use this for initialization
 	void Start () {
 		rb = this.GetComponent<Rigidbody> ();
 		ss= this.GetComponent<SpriteScript>();
 		this.direction = 't';
+
 	}
 
 	// Update is called once per frame
@@ -24,6 +26,7 @@ public class playerMovement2 : MonoBehaviour {
 		if (Input.GetKey(KeyCode.UpArrow)){
 			velocityVector.z += moveSpeed;
 			ss.SetAnimation("Walking Away");
+
 			this.direction = 'a';
 		} else if (Input.GetKey(KeyCode.DownArrow)){
 			velocityVector.z -= moveSpeed;
@@ -46,6 +49,7 @@ public class playerMovement2 : MonoBehaviour {
 	private void setIdle() {
 		if (this.direction == 'a') {
 			ss.SetAnimation("Idle Away");
+
 		} 
 		 if (this.direction == 't') {
 			ss.SetAnimation("Idle Towards");
