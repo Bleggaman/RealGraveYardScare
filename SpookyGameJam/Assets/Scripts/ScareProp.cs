@@ -8,9 +8,8 @@ public abstract class ScareProp : MonoBehaviour, iScare, iActivate {
 
 	public virtual void scare(GameObject sender, GameObject receiver){
 		UnitScript unitScript = receiver.GetComponent<UnitScript> ();
-		int scarePower = unitScript.scaredLevel + scareValue;
-			unitScript.eek (scarePower);
-		//Debug.Log ("scared by " + sender);
+		unitScript.eek (scareValue);
+		Debug.Log (receiver + " was scared by " + sender + " using " +  gameObject + " for " + scareValue);
 	}
 		
 	public virtual void activate (GameObject playerActived)

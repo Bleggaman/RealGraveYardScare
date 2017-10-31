@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FlashLight : ScareEquipItem, iActivate {
+public class FlashLight : ScareEquipItem, iActivate, iLightable {
 
 	public bool lightOn = false;
 	public Collider collider;
 	public MeshRenderer mesh;
 	public bool scaredCoolDown;
+	public Light bulb;
+	public CharacterScript playerScript;
 
 	public FlashLight(GameObject unit){
 		_unit = unit;
@@ -18,6 +20,8 @@ public class FlashLight : ScareEquipItem, iActivate {
 	void Start () {
 		mesh = GetComponent<MeshRenderer> ();
 		mesh.enabled = false;
+		bulb = transform.GetChild (0).GetComponent<Light>();
+		playerScript = GetComponentInParent<CharacterScript> ();
 	}
 	
 	// Update is called once per frame
@@ -28,8 +32,8 @@ public class FlashLight : ScareEquipItem, iActivate {
 	public override void activate (GameObject playerActived)
 	{
 		lightOn = !lightOn;
-
-		mesh.enabled = !mesh.enabled;
+		bulb.enabled = lightOn;
+		mesh.enabled = lightOn;
 
 	}
 
@@ -50,4 +54,19 @@ public class FlashLight : ScareEquipItem, iActivate {
 		yield return new WaitForSeconds(3);
 		scaredCoolDown = false;
 	}
+
+	#region iLightable implementation
+
+	public bool playerIsLit ()
+	{
+		if (playerScript.equipItems [0] == this) {
+			Debug.Log ("HAS FLIGHTLIGHT");
+			return lightOn;
+
+		}
+		Debug.Log ("HAS OTHER");
+		return false;
+	}
+
+	#endregion
 }

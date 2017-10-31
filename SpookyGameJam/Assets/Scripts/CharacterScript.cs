@@ -10,29 +10,27 @@ public class CharacterScript : MonoBehaviour, iScarable {
 	public ScareEquipItem scaryMaskPrefab;
 	public ScareEquipItem regularScarePrefab;
 
-	public ScareEquipItem regularRef;
+	public ScareEquipItem flashLightRef;
+	public List<iActivate> inRange = new List<iActivate>();
 
 	// Use this for initialization
 	void Start () {
-
-		ScareEquipItem regular = Instantiate (regularScarePrefab, transform.position, transform.rotation);
-		regularScarePrefab.GetComponent<ScareEquipItem> ()._unit = gameObject;
-		equipItems [0] = regular;
-		regularRef = regular;
-
-		ScareEquipItem flash = Instantiate (flashLightPrefab, transform.position, transform.rotation);
-		flashLightPrefab.GetComponent<ScareEquipItem> ()._unit = gameObject;
-		equipItems [1] = flash;
-
-		ScareEquipItem mask = Instantiate (scaryMaskPrefab, transform.position, transform.rotation);
-		scaryMaskPrefab.GetComponent<ScareEquipItem> ()._unit = gameObject;
-		equipItems [2] = mask;
-
+		flashLightRef = transform.GetChild (0).GetComponent<ScareEquipItem>(); //gets flashlight;
+		equipItems [0] = flashLightRef;
+			
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
+		if (Input.GetKeyDown(KeyCode.Q)){
+
+
+			foreach (iActivate collidingObject in this.inRange) {
+//				Debug.Log (collidingObject);
+				collidingObject.activate (gameObject);
+			}
+		}
 
 		if (Input.GetKeyDown (KeyCode.W)) {
 			if (equipItems[0] != null) {
@@ -40,6 +38,7 @@ public class CharacterScript : MonoBehaviour, iScarable {
 			}
 		}
 
+		//not in use
 		if (Input.GetKeyDown (KeyCode.E)) {
 			if (equipItems[1] != null) {
 				equipItems [1].activate (gameObject);
@@ -56,16 +55,22 @@ public class CharacterScript : MonoBehaviour, iScarable {
 
 
 
-	void OnTriggerStay(Collider other){
-	
-		if (Input.GetKeyDown(KeyCode.Q)){
-			if (other.CompareTag("MapScareObject")){
-				ScareMapObject scareObject = other.GetComponent<ScareMapObject> ();
-				scareObject.activate (gameObject);
+	void OnTriggerEnter(Collider other){
+		if (other.CompareTag("MapActivateObject")){
+			if (other.gameObject != gameObject) {
+				this.inRange.Add (other.GetComponent<iActivate> ());
 			}
 		}
 	}
 
+
+	void OnTriggerExit(Collider other){
+		if (other.CompareTag("MapActivateObject")){
+			if (other.gameObject != gameObject) {
+				this.inRange.Remove (other.GetComponent<iActivate> ());
+			}
+		}
+	}
 
 	#region iScarable implementation
 	public void scare (int scarePower)

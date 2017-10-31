@@ -4,8 +4,8 @@ using UnityEngine;
 using UnityEngine.AI;
 
 public class GhostMovement : MonoBehaviour, iScarable {
-	public WorldInfo worldInfo;
 
+	public WorldInfo worldInfo;
 	public Transform graphics;
 	public float moveSpeed = 9;
 	public iNode targetNode;
@@ -29,8 +29,7 @@ public class GhostMovement : MonoBehaviour, iScarable {
 
 	//Initialized in Start
 	public Rigidbody rb;
-	public float transparency;
-	public Renderer rend;
+	public ScareEquipItem equipItem;
 
 	// Periods define the amount of time states persist
 	public float fleePeriod = 5;
@@ -72,7 +71,7 @@ public class GhostMovement : MonoBehaviour, iScarable {
 	
 	// Update is called once per frame
 	void Update () {
-		Debug.Log (moveAgainTime);
+//		Debug.Log (moveAgainTime);
 
 	
 	//	Debug.Log ("Tome = " + Time.time);
@@ -94,17 +93,13 @@ public class GhostMovement : MonoBehaviour, iScarable {
 			seePlayer = false;
 		}
 			moveTo ();
-	
-		rend.material.color = new Vector4 (rend.material.color.r, rend.material.color.g, 
-			rend.material.color.b, Mathf.Clamp01(transparency));
-
 
 	}
 	private void resetStatus() {
 		fleeing = false;
 		scared = false;
 
-		transparency = 1;
+	
 	}
 
 	private void moveTo() {
@@ -133,8 +128,6 @@ public class GhostMovement : MonoBehaviour, iScarable {
 					if (Time.time > moveAgainTime) {
 						state = GhostState.wandering;
 
-
-
 					}
 				}
 			}
@@ -157,7 +150,7 @@ public class GhostMovement : MonoBehaviour, iScarable {
 		fleeing = true;
 
 		// fade to become invisible
-		transparency = 0.2f;
+	
 		// run away from scare source
 		Vector3 dirVector = transform.position - source.position;
 		agent.destination = transform.position + dirVector.normalized * 10;
@@ -216,7 +209,7 @@ public class GhostMovement : MonoBehaviour, iScarable {
 		if (Physics.Raycast(transform.position, direction * 7, out hit, 5)){
 			
 			if (hit.collider != null) {
-				Debug.Log (hit.collider.tag);
+//				Debug.Log (hit.collider.tag);
 				return (hit.collider.gameObject.tag == "Player"); 
 			}
 

@@ -1,26 +1,28 @@
 ﻿<Properties RefactoringSettings.EnableRefactorings="True" StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Utils.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/CharacterScript.cs">
     <Files>
-      <File FileName="Assets/Scripts/RegularScare.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/ScareMapObject.cs" Line="20" Column="3" />
+      <File FileName="Assets/Scripts/RegularScare.cs" Line="21" Column="1" />
       <File FileName="Assets/Scripts/iHidingSpot.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/HidingSpot.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/ghostMove.cs" Line="46" Column="1" />
+      <File FileName="Assets/Scripts/ghostMove.cs" Line="15" Column="2" />
       <File FileName="Assets/Scripts/UnitScript.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/FlashLight.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/ScaryMask.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/CharacterScript.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Well.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/CharacterScript.cs" Line="39" Column="1" />
+      <File FileName="Assets/Scripts/Well.cs" Line="7" Column="1" />
       <File FileName="Assets/Scripts/Bucket.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Node.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Utils.cs" Line="23" Column="2" />
-      <File FileName="Assets/Scripts/ScareMapObject.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Utils.cs" Line="16" Column="2" />
       <File FileName="Assets/Scripts/ScareProp.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/iNode.cs" Line="1" Column="1" />
-      <File FileName="Assets/Terrel/Assets/Script/GhostMove.cs" Line="1" Column="1" />
-      <File FileName="Assets/Terrel/Assets/Script/GhostMovement.cs" Line="108" Column="32" />
-      <File FileName="Assets/Scripts/WorldInfo.cs" Line="7" Column="9" />
-      <File FileName="Assets/Terrel/Assets/Script/NavGhostMove.cs" Line="156" Column="2" />
+      <File FileName="Assets/Scripts/WorldInfo.cs" Line="13" Column="90" />
+      <File FileName="Assets/Scripts/Lamp.cs" Line="5" Column="49" />
+      <File FileName="Assets/Scripts/GhostMovement.cs" Line="207" Column="37" />
+      <File FileName="Assets/Scripts/CameraController.cs" Line="1" Column="1" />
+      <File FileName="Assets/AndrewSprites/Resources/Editor/spriteScriptEditor.cs" Line="49" Column="38" />
+      <File FileName="Assets/Scripts/iScare.cs" Line="12" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

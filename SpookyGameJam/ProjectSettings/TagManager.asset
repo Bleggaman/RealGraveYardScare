@@ -5,8 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ghost
-  - MapScareObject
   - sprite_controller
+  - MapActivateObject
+  - MapScareObject
+  - lightable
   layers:
   - Default
   - TransparentFX

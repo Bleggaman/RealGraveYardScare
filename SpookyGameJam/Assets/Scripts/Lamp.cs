@@ -2,14 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Lamp : ScareMapObject, iActivate  {
+public class Lamp : ScareMapObject, iActivate, iLightable  {
 
 	Collider collider;
 	GameObject sender;
+	GameObject player;
 	bool lampOn = true; 
 	GameObject lampChild;
 	SpriteScript ss;
-	List<GameObject> inRange;
+	public List<GameObject> inRange;
+	public float distToLampLit = 3;
 
 	public Lamp (){
 		scareValue = 3;
@@ -21,6 +23,7 @@ public class Lamp : ScareMapObject, iActivate  {
 		collider = this.GetComponent<Collider> ();
 		lampChild = transform.GetChild (0).gameObject;
 		Invoke("thisWorksIGuess", 0.02f);
+		player = GameObject.Find ("Player");
 	}
 	
 	void thisWorksIGuess() {
@@ -29,6 +32,7 @@ public class Lamp : ScareMapObject, iActivate  {
 	}
 
 	public override void activate(GameObject characterActivated){
+		Debug.Log ("LAMP ON by " + characterActivated);
 		sender = characterActivated;
 		lampOn = !lampOn;
 		lampChild.SetActive (lampOn);
@@ -36,7 +40,7 @@ public class Lamp : ScareMapObject, iActivate  {
 			ss.SetAnimation("on");
 			foreach (GameObject go in this.inRange) {
 				if (!go.Equals(characterActivated)) {
-					scare (sender, go);
+					//scare (sender, go);  doesn't scare right now
 				}
 			}
 		} else {
@@ -45,11 +49,27 @@ public class Lamp : ScareMapObject, iActivate  {
 	}
 
 	void OnTriggerEnter(Collider other){
+		if (other.CompareTag("Player") || other.CompareTag("Ghost")){
 		this.inRange.Add(other.gameObject);
+		}
 	}
 
-	
+
 	void OnTriggerExit(Collider other){
-		this.inRange.Remove(other.gameObject);
+		if (other.CompareTag("Player") || other.CompareTag("Ghost")){
+			this.inRange.Remove(other.gameObject);
+		}		
 	}
+
+	#region iLightable implementation
+
+	public bool playerIsLit ()
+	{
+		if (lampOn && Vector3.Distance (gameObject.transform.position, player.transform.position) < distToLampLit) {
+			return true;
+		}
+		return false;
+	}
+
+	#endregion
 }

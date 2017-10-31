@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 135816656880414862}
   - component: {fileID: 23029384708592206}
   - component: {fileID: 114616659442374020}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: RegularScare
   m_TagString: Untagged
   m_Icon: {fileID: 0}

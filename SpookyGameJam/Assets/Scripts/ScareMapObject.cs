@@ -16,6 +16,10 @@ public abstract class ScareMapObject : ScareProp , iNode {
 
 	}
 
+	public GameObject getGameObject ()
+	{
+		return gameObject;
+	}
 }
 
 

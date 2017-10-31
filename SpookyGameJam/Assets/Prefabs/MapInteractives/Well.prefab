@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 212808180153763608}
   m_Layer: 0
   m_Name: Well
-  m_TagString: MapScareObject
+  m_TagString: MapActivateObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -161,3 +161,4 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
