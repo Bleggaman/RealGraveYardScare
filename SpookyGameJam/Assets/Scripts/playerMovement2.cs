@@ -8,7 +8,7 @@ public class playerMovement2 : MonoBehaviour {
 	public float crouchSpeed;
 	public Rigidbody rb;
 	SpriteScript ss;
-	private char direction;
+	public char direction;
 
 	// Use this for initialization
 	void Start () {

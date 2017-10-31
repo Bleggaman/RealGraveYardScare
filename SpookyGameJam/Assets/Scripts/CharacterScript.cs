@@ -15,7 +15,8 @@ public class CharacterScript : MonoBehaviour, iScarable {
 
 	// Use this for initialization
 	void Start () {
-		flashLightRef = transform.GetChild (0).GetComponent<ScareEquipItem>(); //gets flashlight;
+		
+		flashLightRef = GameObject.Find ("FlashLight").GetComponent<ScareEquipItem>();
 		equipItems [0] = flashLightRef;
 			
 	}

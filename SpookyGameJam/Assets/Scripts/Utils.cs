@@ -19,7 +19,7 @@ public static class Utils {
 		nodesSorted = worldInfo.iNodes.OrderBy (node => Vector3.Distance (node.getGameObject().transform.position, hintLocation)).ToList();
 		int number = (int)Random.Range (0, 4);
 		for (int i = 0; i < 3; i++) {
-			Debug.Log(nodesSorted[i]);
+//			Debug.Log(nodesSorted[i]);
 		}
 		return worldInfo.iNodes [number];
 	}

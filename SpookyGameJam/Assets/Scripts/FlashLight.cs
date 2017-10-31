@@ -10,23 +10,35 @@ public class FlashLight : ScareEquipItem, iActivate, iLightable {
 	public bool scaredCoolDown;
 	public Light bulb;
 	public CharacterScript playerScript;
+	public playerMovement2 _playerMovement2;
 
-	public FlashLight(GameObject unit){
-		_unit = unit;
-
-	}
 
 	// Use this for initialization
 	void Start () {
 		mesh = GetComponent<MeshRenderer> ();
 		mesh.enabled = false;
 		bulb = transform.GetChild (0).GetComponent<Light>();
-		playerScript = GetComponentInParent<CharacterScript> ();
+		playerScript = GameObject.Find ("Player").GetComponent<CharacterScript>();
+		_playerMovement2 = GameObject.Find ("Player").GetComponent<playerMovement2> ();
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
-		transform.position = _unit.transform.position;
+		transform.position = new Vector3 (playerScript.gameObject.transform.position.x, playerScript.gameObject.transform.position.y, 
+			playerScript.gameObject.transform.position.z - 2.2f);
+
+		if (_playerMovement2.direction == 't') {
+			transform.eulerAngles = new Vector3 (0,180,0);
+		}
+		if (_playerMovement2.direction == 'a') {
+			transform.eulerAngles = new Vector3 (0,0,0);
+		}
+		if (_playerMovement2.direction == 'l') {
+			transform.eulerAngles = new Vector3 (0,270,0);
+		}
+		if (_playerMovement2.direction == 'r') {
+			transform.eulerAngles = new Vector3 (0,90,0);
+		}
 	}
 
 	public override void activate (GameObject playerActived)
@@ -60,11 +72,9 @@ public class FlashLight : ScareEquipItem, iActivate, iLightable {
 	public bool playerIsLit ()
 	{
 		if (playerScript.equipItems [0] == this) {
-			Debug.Log ("HAS FLIGHTLIGHT");
 			return lightOn;
 
 		}
-		Debug.Log ("HAS OTHER");
 		return false;
 	}
 

@@ -52,7 +52,7 @@ public class Well : ScareMapObject, iActivate, iHidingSpot, iScare  {
 			ScareEquipItem bucket = Instantiate (bucketPrefab, transform.position, transform.rotation);
 			bucket.GetComponent<ScareEquipItem> ()._unit = sender;
 			charScript.equipItems [0] = bucket;
-			charScript.gameObject.transform.GetChild (0).gameObject.SetActive (false); //turns off flashlight
+			GameObject.Find("FlashLight").transform.GetChild(0).gameObject.GetComponent<Light>().enabled = false;
 			bucketTaken = true;
 			ss.SetAnimation("Idle");
 		}

@@ -59,7 +59,7 @@ public class Bucket : ScareEquipItem, iActivate {
 		bucketSpilling = false;
 		mesh.enabled = false;
 		characterScriptRef.equipItems [0] = characterScriptRef.flashLightRef; //sets back to flashlight
-		characterScriptRef.gameObject.transform.GetChild (0).gameObject.SetActive (true); //turns off flashlight
+		GameObject.Find("FlashLight").transform.GetChild(0).gameObject.GetComponent<Light>().enabled = true;
 		GameObject.Destroy (gameObject);
 	}
 }
