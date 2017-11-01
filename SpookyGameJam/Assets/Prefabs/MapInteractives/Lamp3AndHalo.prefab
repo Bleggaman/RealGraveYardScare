@@ -233,7 +233,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: f05adaf617a6546c5a1d462d75f59a0b, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.749
+  m_Volume: 0.942
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -404,6 +404,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scareValue: 1
   activateRange: 2
+  lampOn: 1
   inRange: []
   distToLampLit: 3
 --- !u!114 &114777588822680108
@@ -483,6 +484,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scareValue: 1
   activateRange: 2
+  lampOn: 1
   inRange: []
   distToLampLit: 3
 --- !u!136 &136806965098950894

@@ -12,6 +12,7 @@ public class CharacterScript : MonoBehaviour, iScarable {
 
 	public ScareEquipItem flashLightRef;
 	public List<iActivate> inRange = new List<iActivate>();
+	bool playerSpawning = false;
 
 	// Use this for initialization
 	void Start () {
@@ -77,8 +78,18 @@ public class CharacterScript : MonoBehaviour, iScarable {
 
 	#region iScarable implementation
 	public void scare (int scarePower)
-	{
-		Debug.Log ("eek : " + scarePower);
+	{if (playerSpawning == false) {
+			Debug.Log ("eek : " + scarePower);
+			StartCoroutine (playerSpawnTime ());
+			playerSpawning = true;
+		}
+
 	}
 	#endregion
+
+	IEnumerator playerSpawnTime(){
+		yield return new WaitForSeconds (.5f);
+		transform.position = new Vector3 (10, 0, -50);
+		playerSpawning = false;
+	}
 }
