@@ -13,6 +13,8 @@ public class GhostTestAI : MonoBehaviour, iScarable {
 	public NavMeshAgent agent;
 	public CharacterScript playerScript;
 	public bool lineOfSight;
+	public FlashLight flashLightref;
+	public float flashLightSeeDist = 15;
 
 	public float nodeSensitivity = 1;
 	//Propertie
@@ -60,10 +62,12 @@ public class GhostTestAI : MonoBehaviour, iScarable {
 		state = GhostState.wandering;
 		rb = GetComponent<Rigidbody> ();
 		agent = GetComponent<NavMeshAgent> ();
+		flashLightref = GameObject.Find ("FlashLight").GetComponent<FlashLight> ();
 	}
 
 	// Update is called once per frame
 	void Update () {
+		Debug.Log (state);
 
 		seesPlayer = seeingPlayer ();
 
@@ -101,11 +105,11 @@ public class GhostTestAI : MonoBehaviour, iScarable {
 
 				if (Vector3.Distance (transform.position, player.transform.position) < scareDistance) {
 					player.GetComponent<CharacterScript> ().scare (5);
-					state = GhostState.notMove;
+					StartCoroutine(scaredPlayer (2f)); //scared the player
 				} else if (seesPlayer) {
 					hintLocation = player.transform.position;
 					targetChase = hintLocation;
-					targetMove = targetChase;
+					targetMove = hintLocation;
 				} else {
 					if (targetChase == vector3Null || Vector3.Distance (transform.position, targetMove) < nodeSensitivity) {
 						targetChase = Utils.findiNodeFromHint (worldInfo, hintLocation).getGameObject ().transform.position;
@@ -120,30 +124,24 @@ public class GhostTestAI : MonoBehaviour, iScarable {
 			//ScaredYou: ghost waits for three seconds before wandering
 			if (state == GhostState.notMove) {
 				targetMove = transform.position;
-				if (!scaredYouOn) {
-					scaredYouUntil = Time.time + 3;
-					scaredYouOn = true;
-				} else if (Time.time > scaredYouUntil) {
-					scaredYouOn = false;
-					state = GhostState.wandering;
-				}
-
 			}
-
 			agent.destination = targetMove;
 		}
 	}
 			
 	private bool seeingPlayer () {
 		
-
 		if (worldInfo.playerLiit) { 
 			return true;
 		}
 		if (!Physics.Linecast (transform.position, player.transform.position)) {
 			Debug.Log ("line of sight");
-
 			lineOfSight = true;
+			if (flashLightref.lightOn) {
+				if (Vector3.Distance (gameObject.transform.position, player.transform.position) < flashLightSeeDist) {
+					return true;
+				}
+			}
 			if (state == GhostState.chasing || state == GhostState.notMove) {
 				if (Vector3.Distance (transform.position, player.transform.position) < ghostLoseSightRange) {
 					return true;
@@ -189,18 +187,44 @@ public class GhostTestAI : MonoBehaviour, iScarable {
 
 	public void scare (int scarePower)
 	{
-
-		if (state == GhostState.chasing) {
-			Debug.Log ("sscare failed!");
-		} else {
-			Debug.Log ("Ghost eeked + " + scarePower);
-			state = GhostState.notMove;
-		}
+		if (state != GhostState.notMove) {
+			if (state == GhostState.chasing) {
+				Debug.Log ("sscare failed!");
+			} else {
+				Debug.Log ("Gasdfasdfhost eeked + " + scarePower);
+				StartCoroutine (wasScared (.2f));
+			}
+		} else
+			Debug.Log ("already scared");
+		
 	}
 	#endregion
+
+	IEnumerator scaredPlayer(float secondsNotMove){
+		state = GhostState.notMove;
+		yield return new WaitForSeconds (secondsNotMove);
+
+		//really here we make the ghost disappear
+		transform.position = new Vector3 (0, 0, 0);
+		state = GhostState.wandering;
+	}
+
+	IEnumerator wasScared(float secondsNotMove){
+		state = GhostState.notMove;
+		yield return new WaitForSeconds (secondsNotMove);
+
+		//really here we make the ghost disappear
+		transform.position = new Vector3 (0, 0, 0);
+		state = GhostState.wandering;
+	}
 }
 
 
 
 //get the player is under light or using flashlight bool
 //give the hints when the player is walking over stuff
+//ghost AI: make disapear when scared
+//ghost AI: make respawn at grave and chase
+//ghost AI: make go to lamp and activate
+//ghost AI: make more nodes
+///ghost A: 

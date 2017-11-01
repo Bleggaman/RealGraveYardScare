@@ -7,7 +7,7 @@ public class Lamp : ScareMapObject, iActivate, iLightable  {
 	Collider collider;
 	GameObject sender;
 	GameObject player;
-	bool lampOn = true; 
+	public bool lampOn = true; 
 	GameObject lampChild;
 	SpriteScript ss;
 	public List<GameObject> inRange;
@@ -38,11 +38,11 @@ public class Lamp : ScareMapObject, iActivate, iLightable  {
 		lampChild.SetActive (lampOn);
 		if (lampOn) { 
 			ss.SetAnimation("on");
-			foreach (GameObject go in this.inRange) {
-				if (!go.Equals(characterActivated)) {
+			//foreach (GameObject go in this.inRange) {
+			//	if (!go.Equals(characterActivated)) {
 					//scare (sender, go);  doesn't scare right now
-				}
-			}
+			//	}
+			//}
 		} else {
 			ss.SetAnimation("off");
 		}

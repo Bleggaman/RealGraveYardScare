@@ -20,12 +20,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4404123249224848}
   - component: {fileID: 33363624508886342}
-  - component: {fileID: 65681855479996840}
   - component: {fileID: 23502594680415536}
   - component: {fileID: 114944162088087852}
   m_Layer: 2
   m_Name: FlashLight
-  m_TagString: lightable
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -79,7 +78,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1138156655081486}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_MotionVectors: 1
@@ -112,25 +111,13 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1138156655081486}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &65681855479996840
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1138156655081486}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!108 &108844005830192606
 Light:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1676949948434374}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 1, g: 0.87170386, b: 0.5955882, a: 1}
@@ -174,7 +161,7 @@ MonoBehaviour:
   scareValue: 0
   _unit: {fileID: 0}
   lightOn: 0
-  collider: {fileID: 65681855479996840}
+  collider: {fileID: 0}
   mesh: {fileID: 0}
   scaredCoolDown: 0
   bulb: {fileID: 0}
