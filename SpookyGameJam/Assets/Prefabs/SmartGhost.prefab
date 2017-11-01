@@ -247,7 +247,7 @@ MonoBehaviour:
   flashLightSeeDist: 15
   nodeSensitivity: 1
   ghostSeeRange: 2
-  ghostLoseSightRange: 10
+  ghostLoseSightRange: 7
   rb: {fileID: 0}
   equipItem: {fileID: 0}
   stopChaseTime: 0
@@ -257,7 +257,7 @@ MonoBehaviour:
   scaredYouUntil: 0
   scaredYouOn: 0
   playerUnderLight: 0
-  reactionTime: 0.5
+  reactionTime: 1
   ghostReacting: 0
   ghostUnderLight: 0
   seesPlayer: 0

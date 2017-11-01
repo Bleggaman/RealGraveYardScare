@@ -36,7 +36,7 @@ public class CharacterScript : MonoBehaviour, iScarable {
 			}
 		}
 
-		if (Input.GetKeyDown (KeyCode.W)) {
+		if (Input.GetKeyDown (KeyCode.Space)) {
 			if (equipItems[0] != null) {
 				equipItems [0].activate (gameObject);
 
