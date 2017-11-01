@@ -65,7 +65,8 @@ public class Lamp : ScareMapObject, iActivate, iLightable  {
 
 	public bool playerIsLit ()
 	{
-		if (lampOn && Vector3.Distance (gameObject.transform.position, player.transform.position) < distToLampLit) {
+		Vector3 lightPos = new Vector3 (transform.position.x, transform.position.y, transform.position.z - 3);
+		if (lampOn && Vector3.Distance (lightPos, player.transform.position) < distToLampLit) {
 			return true;
 		}
 		return false;

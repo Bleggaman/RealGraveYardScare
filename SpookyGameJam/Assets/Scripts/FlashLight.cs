@@ -11,6 +11,7 @@ public class FlashLight : ScareEquipItem, iActivate, iLightable {
 	public Light bulb;
 	public CharacterScript playerScript;
 	public playerMovement2 _playerMovement2;
+	public AudioSource flashSwitching;
 
 
 	// Use this for initialization
@@ -20,6 +21,7 @@ public class FlashLight : ScareEquipItem, iActivate, iLightable {
 		bulb = transform.GetChild (0).GetComponent<Light>();
 		playerScript = GameObject.Find ("Player").GetComponent<CharacterScript>();
 		_playerMovement2 = GameObject.Find ("Player").GetComponent<playerMovement2> ();
+		flashSwitching = GetComponent<AudioSource> ();
 	}
 
 	// Update is called once per frame
@@ -45,8 +47,9 @@ public class FlashLight : ScareEquipItem, iActivate, iLightable {
 	{
 		lightOn = !lightOn;
 		bulb.enabled = lightOn;
-		mesh.enabled = lightOn;
+		//mesh.enabled = lightOn;    does not show flashright light right now
 
+		flashSwitching.Play();
 	}
 
 	void OnTriggerStay(Collider other){

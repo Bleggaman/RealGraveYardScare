@@ -13,7 +13,7 @@ public class GhostMovement : MonoBehaviour, iScarable {
 	public GameObject candyDrop;
 	public NavMeshAgent agent;
 	public float foVision = 120;
-	public float visionRange = 5;
+	public float visionRange = 2;
 
 	public float nodeSensitivity = 1;
 	//Properties

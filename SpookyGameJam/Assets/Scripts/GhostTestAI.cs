@@ -7,6 +7,9 @@ public class GhostTestAI : MonoBehaviour, iScarable {
 
 	public WorldInfo worldInfo;
 	public Transform graphics;
+	public AudioSource audio1;
+	public AudioSource audio2;
+
 	public float moveSpeed = 9;
 
 	public GameObject candyDrop;
@@ -20,7 +23,7 @@ public class GhostTestAI : MonoBehaviour, iScarable {
 	//Propertie
 
 
-	public float ghostSeeRange = 5;
+	public float ghostSeeRange = 2;
 	public float ghostLoseSightRange = 10;
 
 	//Initialized in Start
@@ -30,7 +33,7 @@ public class GhostTestAI : MonoBehaviour, iScarable {
 	// Periods define the amount of time states persis
 
 	// Timers track time internally
-	public float scareDistance = 2;
+	public float scareDistance = .1f;
 
 	public GameObject player;
 
@@ -56,6 +59,7 @@ public class GhostTestAI : MonoBehaviour, iScarable {
 
 	// Use this for initialization
 	void Start () {
+		
 		worldInfo = GameObject.Find("Main Camera").GetComponent<WorldInfo>();
 		player = GameObject.Find ("Player");
 		playerScript = player.GetComponent<CharacterScript> ();
@@ -156,8 +160,11 @@ public class GhostTestAI : MonoBehaviour, iScarable {
 	}
 
 	public void receiveHint(Vector3 hintLocation){
-		targetMove = Utils.findHidingFromHint (gameObject, worldInfo, hintLocation).getGameObject().transform.position;
-		state = GhostState.wandering;
+		if (state == GhostState.wandering) {
+			targetMove = hintLocation;
+		} else if (state == GhostState.chasing){
+			targetChase = hintLocation;
+			}
 		//moveAgainTime = 10;
 	}
 
@@ -190,8 +197,12 @@ public class GhostTestAI : MonoBehaviour, iScarable {
 		if (state != GhostState.notMove) {
 			if (state == GhostState.chasing) {
 				Debug.Log ("sscare failed!");
+				if (!audio2.isPlaying) {
+					audio2.Play ();
+				}
 			} else {
 				Debug.Log ("Gasdfasdfhost eeked + " + scarePower);
+				audio1.Play ();
 				StartCoroutine (wasScared (.2f));
 			}
 		} else

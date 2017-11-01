@@ -10,12 +10,15 @@ public class playerMovement2 : MonoBehaviour {
 	SpriteScript ss;
 	public char direction;
 	public GameObject flashLightHitBox;
+	public AudioSource audio1;
+	public AudioSource audio2;
 
 	// Use this for initialization
 	void Start () {
 		rb = this.GetComponent<Rigidbody> ();
 		ss= this.GetComponent<SpriteScript>();
 		this.direction = 't';
+
 
 	}
 
@@ -41,6 +44,11 @@ public class playerMovement2 : MonoBehaviour {
 			velocityVector.x -= moveSpeed;
 			ss.SetAnimation("Walking Left");
 			this.direction = 'l';
+		}
+		if (velocityVector == Vector3.zero) {
+			audio1.Pause();
+		} else {
+			audio1.UnPause ();
 		}
 		ss.SetFramesPerSecond(8f);
 		rb.velocity = velocityVector;

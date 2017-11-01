@@ -13,6 +13,7 @@ public class CharacterScript : MonoBehaviour, iScarable {
 	public ScareEquipItem flashLightRef;
 	public List<iActivate> inRange = new List<iActivate>();
 	bool playerSpawning = false;
+	private AudioSource audio2;
 
 	// Use this for initialization
 	void Start () {
@@ -20,7 +21,7 @@ public class CharacterScript : MonoBehaviour, iScarable {
 		flashLightRef = GameObject.Find ("FlashLight").GetComponent<ScareEquipItem>();
 		equipItems [0] = flashLightRef;
 
-			
+		audio2 = GetComponent<playerMovement2> ().audio2;
 	}
 	
 	// Update is called once per frame
@@ -82,14 +83,15 @@ public class CharacterScript : MonoBehaviour, iScarable {
 			Debug.Log ("eek : " + scarePower);
 			StartCoroutine (playerSpawnTime ());
 			playerSpawning = true;
+			audio2.Play ();
 		}
 
 	}
 	#endregion
 
 	IEnumerator playerSpawnTime(){
-		yield return new WaitForSeconds (.5f);
-		transform.position = new Vector3 (10, 0, -50);
+		yield return new WaitForSeconds (.1f);
+		transform.position = new Vector3 (10, 0, -100);
 		playerSpawning = false;
 	}
 }

@@ -9,8 +9,11 @@ public class WorldInfo : MonoBehaviour {
 	public List<iLightable> lightables = new List<iLightable> ();
 	public GameObject[] unecessaryJank;
 	public bool playerLiit;
+	public GameObject[] ghostArray;
 
 	void Start(){
+		ghostArray = GameObject.FindGameObjectsWithTag ("Ghost");
+
 		nodesParent = GameObject.Find ("Nodes/Hidings");
 
 		foreach (Transform node in nodesParent.transform) {    //should get nodes based on type
