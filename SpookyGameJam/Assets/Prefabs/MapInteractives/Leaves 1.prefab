@@ -39,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1846580388271560}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -12.815723, y: 0.6604388, z: -4.130846}
+  m_LocalPosition: {x: -6.8257217, y: 0.6604388, z: 3.1391535}
   m_LocalScale: {x: 2, y: 2.000001, z: 0.10000005}
   m_Children: []
   m_Father: {fileID: 0}
@@ -310,7 +310,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   worldInfo: {fileID: 0}
-  ghostHearingTwigsDist: 10
+  ghostHearingTwigsDist: 25
 --- !u!212 &212261635507064140
 SpriteRenderer:
   m_ObjectHideFlags: 1
