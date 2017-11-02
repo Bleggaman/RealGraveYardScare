@@ -56,10 +56,12 @@ public class GhostTestAI : MonoBehaviour, iScarable {
 	public enum GhostState {wandering, chasing, notMove};
 	GhostState state = new GhostState();
 
+	GhostSpriteManager sp;
+
 
 	// Use this for initialization
 	void Start () {
-		
+		sp = this.GetComponent<GhostSpriteManager>();
 		worldInfo = GameObject.Find("Main Camera").GetComponent<WorldInfo>();
 		player = GameObject.Find ("Player");
 		playerScript = player.GetComponent<CharacterScript> ();
@@ -194,9 +196,10 @@ public class GhostTestAI : MonoBehaviour, iScarable {
 
 	public void scare (int scarePower)
 	{
+
 		if (state != GhostState.notMove) {
 			if (state == GhostState.chasing) {
-				Debug.Log ("sscare failed!");
+				sp.gotScare();
 				if (!audio2.isPlaying) {
 					audio2.Play ();
 				}

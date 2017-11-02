@@ -20,10 +20,10 @@ MonoBehaviour:
     y: 30
     width: 1280
     height: 663
-  m_MinSize: {x: 683, y: 613}
-  m_MaxSize: {x: 14004, y: 18063}
+  m_MinSize: {x: 679, y: 592}
+  m_MaxSize: {x: 14002, y: 18042}
   vertical: 0
-  controlID: 7256
+  controlID: 14298
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -120,10 +120,10 @@ MonoBehaviour:
     y: 0
     width: 862
     height: 663
-  m_MinSize: {x: 406, y: 613}
-  m_MaxSize: {x: 10002, y: 18063}
+  m_MinSize: {x: 404, y: 592}
+  m_MaxSize: {x: 10002, y: 18042}
   vertical: 1
-  controlID: 7257
+  controlID: 14299
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -144,10 +144,10 @@ MonoBehaviour:
     y: 0
     width: 862
     height: 392
-  m_MinSize: {x: 406, y: 342}
-  m_MaxSize: {x: 8006, y: 8042}
+  m_MinSize: {x: 404, y: 321}
+  m_MaxSize: {x: 8004, y: 8021}
   vertical: 0
-  controlID: 7258
+  controlID: 14300
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -201,9 +201,9 @@ MonoBehaviour:
     height: 371
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 58280000
-    m_LastClickedID: 0
-    m_ExpandedIDs: 96d2ffff68ddffff34ebffff00000000de310000ca330000
+    m_SelectedIDs: 822dfcff
+    m_LastClickedID: -250494
+    m_ExpandedIDs: 6634fcff96d2ffff68ddffff34ebffff00000000de310000ca3300008ec30000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -246,10 +246,10 @@ MonoBehaviour:
     y: 0
     width: 660
     height: 392
-  m_MinSize: {x: 204, y: 342}
-  m_MaxSize: {x: 4004, y: 8042}
+  m_MinSize: {x: 204, y: 321}
+  m_MaxSize: {x: 4004, y: 8021}
   vertical: 1
-  controlID: 7259
+  controlID: 14301
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -432,9 +432,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: -0.3142226, y: -0.030754305, z: 0.010185131, w: -0.9487964}
   m_Size:
-    m_Target: 0.6602944
+    m_Target: 10.860298
     speed: 2
-    m_Value: 0.6602944
+    m_Value: 10.860298
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -509,18 +509,18 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Prefabs
+    - Assets/Scripts
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs
+  - Assets/Scripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: /Users/britthenderson/Desktop/RealGraveYardScare/SpookyGameJam
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 23}
-    m_SelectedIDs: ae2b0000
-    m_LastClickedID: 11182
+    scrollPos: {x: 0, y: 107}
+    m_SelectedIDs: b22b0000
+    m_LastClickedID: 11186
     m_ExpandedIDs: 000000008c2b0000ae2b0000ba2b0000c62b0000d82e0000da2e000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -574,8 +574,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 58280000
-    m_LastClickedInstanceID: 10328
+    m_SelectedInstanceIDs: 822dfcff
+    m_LastClickedInstanceID: -250494
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c62300001cb4000090b9000070ad0000824c010040ad000054ad000064ad00007aad000080b50000e463010050ad000016b4000068ad00003cad000034ad000042ad000036ad00001ab4000012b400006cad000044ad000072ad00007c250000282700004e25000066250000562700004e2600004a2500004a26000028250000ae2600006e250000e82600003a2500006a2700000825000046250000762600007e2500005e260000722700005e250000ce250000fc240000122700003e260000662600005625000006260000f824000098260000ee2400007a2600006a2600000a2600005a250000a6da0200
     m_RenameOverlay:
@@ -601,7 +601,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 0}
+    m_ScrollPosition: {x: 0, y: 273}
     m_GridSize: 64
   m_DirectoriesAreaWidth: 222
 --- !u!114 &15
@@ -710,7 +710,7 @@ MonoBehaviour:
     y: 94
     width: 416
     height: 642
-  m_ScrollPosition: {x: 0, y: 1761.9551}
+  m_ScrollPosition: {x: 0, y: 964.00726}
   m_InspectorMode: 0
   m_PreviewResizer:
     m_CachedPref: -160

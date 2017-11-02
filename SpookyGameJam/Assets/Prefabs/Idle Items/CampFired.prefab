@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 108032799357438732}
   - component: {fileID: 114967253976581138}
   - component: {fileID: 82436702100505108}
+  - component: {fileID: 114397121532190278}
   m_Layer: 2
   m_Name: CampFired
   m_TagString: lightable
@@ -383,6 +384,17 @@ MonoBehaviour:
       startFrame: 36
       length: 8
   spriteSheetName: SpoopItems
+--- !u!114 &114397121532190278
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1593845580332048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dc5c821b86be4011a88882dde855bec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114967253976581138
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -436,4 +448,3 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0

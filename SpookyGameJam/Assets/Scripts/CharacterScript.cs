@@ -36,7 +36,7 @@ public class CharacterScript : MonoBehaviour, iScarable {
 			}
 		}
 
-		if (Input.GetKeyDown (KeyCode.W)) {
+		if (Input.GetKeyDown (KeyCode.Space)) {
 			if (equipItems[0] != null) {
 				equipItems [0].activate (gameObject);
 
@@ -91,7 +91,7 @@ public class CharacterScript : MonoBehaviour, iScarable {
 
 	IEnumerator playerSpawnTime(){
 		yield return new WaitForSeconds (.1f);
-		transform.position = new Vector3 (10, 0, -100);
+		transform.position = new Vector3 (10, 0, -25);
 		playerSpawning = false;
 	}
 }

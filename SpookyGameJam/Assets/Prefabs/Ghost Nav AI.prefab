@@ -101,6 +101,7 @@ MonoBehaviour:
   hiding: 0
   playerSeen: 0
   rb: {fileID: 0}
+  equipItem: {fileID: 0}
   fleePeriod: 5
   animPeriod: 3
   reactionPeriod: 0.5
@@ -171,14 +172,10 @@ MonoBehaviour:
   - {fileID: 21300086, guid: eccb4850a22a14e0eb3d79639dcbf594, type: 3}
   lookup: {fileID: 0}
   editorAnimations:
-  - name: FailedScare
+  - name: Idle
     animation:
       startFrame: 0
-      length: 8
-  - name: SuccessfulScare
-    animation:
-      startFrame: 0
-      length: -1
+      length: 1
   spriteSheetName: SpookTime
 --- !u!136 &136244585642830826
 CapsuleCollider:
@@ -255,4 +252,3 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0

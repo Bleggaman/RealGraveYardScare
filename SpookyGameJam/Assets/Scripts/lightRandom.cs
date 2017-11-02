@@ -7,6 +7,7 @@ public class lightRandom : MonoBehaviour {
 	Lamp lamp1;
 	Lamp lamp2;
 	AudioSource lampSound;
+	int chance;
 
 	bool waiting;
 
@@ -30,10 +31,15 @@ public class lightRandom : MonoBehaviour {
 
 	IEnumerator lampRandomOn(){
 		waiting = true;
-		int waitTime = Random.Range (0, 40);
-		int chance = Random.Range (0, 100);
+		int waitTime = Random.Range (5, 20);
 		yield return new WaitForSeconds(waitTime);
-		if (chance > 10) {
+		if (lamp1.lampOn) { //if the lamp is on, there is a higher chance of it turning off
+			 chance = Random.Range (0, 65);
+		} else {
+			 chance = Random.Range (0, 60);
+		}
+
+		if (chance > 40) {
 			waiting = true;
 			//flicker
 			lamp1.activate (gameObject);
@@ -52,9 +58,9 @@ public class lightRandom : MonoBehaviour {
 			lamp2.activate (gameObject);
 			yield return new WaitForSeconds(.1f);
 
-			waiting = false;
-		}
 
+		}
+		waiting = false;
 
 
 	}

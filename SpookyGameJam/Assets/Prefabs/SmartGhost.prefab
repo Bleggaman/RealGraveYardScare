@@ -247,7 +247,7 @@ MonoBehaviour:
   flashLightSeeDist: 15
   nodeSensitivity: 1
   ghostSeeRange: 2
-  ghostLoseSightRange: 10
+  ghostLoseSightRange: 7
   rb: {fileID: 0}
   equipItem: {fileID: 0}
   stopChaseTime: 0
@@ -257,7 +257,7 @@ MonoBehaviour:
   scaredYouUntil: 0
   scaredYouOn: 0
   playerUnderLight: 0
-  reactionTime: 0.5
+  reactionTime: 1
   ghostReacting: 0
   ghostUnderLight: 0
   seesPlayer: 0
@@ -287,7 +287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d255a8fdecc77d044b4d11e50947307f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sr: {fileID: 0}
+  sr: {fileID: 212305983877223840}
   timer: 0
   framesPerSecond: 0
   spriteSheet:
@@ -337,14 +337,34 @@ MonoBehaviour:
   - {fileID: 21300086, guid: eccb4850a22a14e0eb3d79639dcbf594, type: 3}
   lookup: {fileID: 0}
   editorAnimations:
-  - name: FailedScare
+  - name: Idle
     animation:
-      startFrame: 0
-      length: 8
-  - name: SuccessfulScare
+      startFrame: 18
+      length: 2
+  - name: towards
     animation:
-      startFrame: 0
-      length: -1
+      startFrame: 18
+      length: 4
+  - name: left
+    animation:
+      startFrame: 22
+      length: 9
+  - name: away
+    animation:
+      startFrame: 31
+      length: 4
+  - name: left
+    animation:
+      startFrame: 35
+      length: 9
+  - name: cry
+    animation:
+      startFrame: 9
+      length: 4
+  - name: poof
+    animation:
+      startFrame: 13
+      length: 5
   spriteSheetName: SpookTime
 --- !u!136 &136918940060947660
 CapsuleCollider:
@@ -412,7 +432,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: eccb4850a22a14e0eb3d79639dcbf594, type: 3}
+  m_Sprite: {fileID: 21300036, guid: eccb4850a22a14e0eb3d79639dcbf594, type: 3}
   m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -421,4 +441,3 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0

@@ -7,10 +7,13 @@ public class GhostSpriteManager : MonoBehaviour {
 	SpriteScript ss;
 	Rigidbody rb;
 	GhostMovement state;
+	GhostTestAI ai;
+	bool animating;
 	// Use this for initialization
 	void Start () {
 		rb = this.GetComponent<Rigidbody>();
 		state = this.GetComponent<GhostMovement>();
+		ai = this.GetComponent<GhostTestAI>();
 		Invoke("thisWorksIGuess", 0.02f);
 	}
 	
@@ -20,17 +23,6 @@ public class GhostSpriteManager : MonoBehaviour {
 	}
 
 	void Update() {
-		if (state.scared) {
-			//use a different animator to get the animation of ghost pooping candy
-			//wait some time
-			ss.SetAnimation("cry");
-			ss.SetFramesPerSecond(2f);
-			//wait 2 seconds
-			ss.SetAnimation("poof");
-			ss.SetFramesPerSecond(5f);
-			//wait 1 second
-			Destroy(this);
-		}
 
 		Vector3 vel = rb.velocity;
 		if (vel.z > 0) {
@@ -50,5 +42,28 @@ public class GhostSpriteManager : MonoBehaviour {
 			ss.SetFramesPerSecond(3f);
 		}
 
+	}
+
+	IEnumerator animWait(float x){
+		animating = true;
+		yield return new WaitForSeconds(x);
+		animating = false;
+	}
+
+	public void gotScare() {
+		if (!animating) {
+		ss.SetAnimation("cry");
+		ss.SetFramesPerSecond(2f);
+		
+			StartCoroutine(animWait(2f));
+		
+		ss.SetAnimation("poof");
+		ss.SetFramesPerSecond(5f);
+		
+			StartCoroutine(animWait(1f));
+		
+		//move the ghost 
+		transform.position = new Vector3 (0f,0f, -50f);
+		}
 	}
 }
