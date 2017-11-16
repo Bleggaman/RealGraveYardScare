@@ -425,6 +425,8 @@ MonoBehaviour:
   regularScarePrefab: {fileID: 114616659442374020, guid: fc7eef2c4a28a4da98eb9f9abea28598,
     type: 2}
   flashLightRef: {fileID: 0}
+  count: 42
+  countText: {fileID: 0}
 --- !u!114 &114599925785179728
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -497,4 +499,3 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0

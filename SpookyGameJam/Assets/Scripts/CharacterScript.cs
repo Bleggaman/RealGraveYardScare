@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CharacterScript : MonoBehaviour, iScarable {
 
@@ -15,9 +16,17 @@ public class CharacterScript : MonoBehaviour, iScarable {
 	bool playerSpawning = false;
 	private AudioSource audio2;
 
+	//score texts:
+	public int count;
+	public Text countText;
+	private int high;
+	public Text highScore;
+
 	// Use this for initialization
 	void Start () {
-		
+		countText.text = "Space = Flashlight";
+		highScore.text = "Q turns on/off Lamps";
+		count = 0;
 		flashLightRef = GameObject.Find ("FlashLight").GetComponent<ScareEquipItem>();
 		equipItems [0] = flashLightRef;
 
@@ -81,6 +90,11 @@ public class CharacterScript : MonoBehaviour, iScarable {
 	public void scare (int scarePower)
 	{if (playerSpawning == false) {
 			Debug.Log ("eek : " + scarePower);
+			GameObject[] ghosts = GameObject.FindGameObjectsWithTag("Ghost");
+			//too many ghosts can lag the game.
+			for (int i = 7; i < ghosts.Length; i++) {
+				Destroy(ghosts[i]);
+			}
 			StartCoroutine (playerSpawnTime ());
 			playerSpawning = true;
 			audio2.Play ();
@@ -90,7 +104,12 @@ public class CharacterScript : MonoBehaviour, iScarable {
 	#endregion
 
 	IEnumerator playerSpawnTime(){
-		yield return new WaitForSeconds (.1f);
+		countText.text = "Ghosts Scared: 0";
+		high =  Mathf.Max(count, high);
+		highScore.text = "HighScore: " + high;
+
+		count = 0;
+		yield return new WaitForSeconds (.2f);
 		transform.position = new Vector3 (10, 0, -50);
 		playerSpawning = false;
 	}

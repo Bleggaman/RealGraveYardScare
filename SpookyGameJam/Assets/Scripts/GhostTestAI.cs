@@ -63,7 +63,6 @@ public class GhostTestAI : MonoBehaviour, iScarable {
 	void Start () {
 		sp = this.GetComponent<GhostSpriteManager>();
 		worldInfo = GameObject.Find("Main Camera").GetComponent<WorldInfo>();
-		player = GameObject.Find ("Player");
 		playerScript = player.GetComponent<CharacterScript> ();
 		state = GhostState.wandering;
 		rb = GetComponent<Rigidbody> ();
@@ -110,7 +109,7 @@ public class GhostTestAI : MonoBehaviour, iScarable {
 
 
 				if (Vector3.Distance (transform.position, player.transform.position) < scareDistance) {
-					player.GetComponent<CharacterScript> ().scare (5);
+					
 					StartCoroutine(scaredPlayer (2f)); //scared the player
 				} else if (seesPlayer) {
 					hintLocation = player.transform.position;
@@ -198,16 +197,11 @@ public class GhostTestAI : MonoBehaviour, iScarable {
 	{
 
 		if (state != GhostState.notMove) {
-			if (state == GhostState.chasing) {
-				sp.gotScare();
-				if (!audio2.isPlaying) {
-					audio2.Play ();
-				}
-			} else {
+			
 				Debug.Log ("Gasdfasdfhost eeked + " + scarePower);
 				audio1.Play ();
 				StartCoroutine (wasScared (.2f));
-			}
+			
 		} else
 			Debug.Log ("already scared");
 		
@@ -216,8 +210,9 @@ public class GhostTestAI : MonoBehaviour, iScarable {
 
 	IEnumerator scaredPlayer(float secondsNotMove){
 		state = GhostState.notMove;
+		playerScript.scare(7);
 		yield return new WaitForSeconds (secondsNotMove);
-
+		
 		//really here we make the ghost disappear
 		transform.position = new Vector3 (0, 0, 0);
 		state = GhostState.wandering;
@@ -226,9 +221,15 @@ public class GhostTestAI : MonoBehaviour, iScarable {
 	IEnumerator wasScared(float secondsNotMove){
 		state = GhostState.notMove;
 		yield return new WaitForSeconds (secondsNotMove);
-
+		playerScript.count++;
+		playerScript.countText.text = "Ghosts Scared: " + playerScript.count;
 		//really here we make the ghost disappear
-		transform.position = new Vector3 (0, 0, 0);
+		int i = Random.Range(-75, 75);
+		int j = Random.Range(-75, 75);
+		transform.position = new Vector3 (i, 0, j);
+		//creates a second ghost and marks it.
+		GameObject newGhost = Instantiate(this.gameObject, new Vector3 (j, 0, i), this.transform.rotation);
+		//newGhost.tag = "newGhost";
 		state = GhostState.wandering;
 	}
 }
