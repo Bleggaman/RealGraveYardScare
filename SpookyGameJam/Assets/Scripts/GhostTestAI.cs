@@ -19,7 +19,7 @@ public class GhostTestAI : MonoBehaviour, iScarable {
 	public FlashLight flashLightref;
 	public float flashLightSeeDist = 15;
 
-	public float nodeSensitivity = 1;
+	public float nodeSensitivity = 3;
 	//Propertie
 
 
@@ -33,7 +33,7 @@ public class GhostTestAI : MonoBehaviour, iScarable {
 	// Periods define the amount of time states persis
 
 	// Timers track time internally
-	public float scareDistance = .1f;
+	public float scareDistance = 2f;
 
 	public GameObject player;
 

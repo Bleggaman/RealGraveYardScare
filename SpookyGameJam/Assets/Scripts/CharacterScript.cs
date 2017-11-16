@@ -91,7 +91,7 @@ public class CharacterScript : MonoBehaviour, iScarable {
 
 	IEnumerator playerSpawnTime(){
 		yield return new WaitForSeconds (.1f);
-		transform.position = new Vector3 (10, 0, -25);
+		transform.position = new Vector3 (10, 0, -50);
 		playerSpawning = false;
 	}
 }

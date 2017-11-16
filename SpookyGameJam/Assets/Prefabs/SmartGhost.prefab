@@ -245,13 +245,13 @@ MonoBehaviour:
   lineOfSight: 0
   flashLightref: {fileID: 0}
   flashLightSeeDist: 15
-  nodeSensitivity: 1
-  ghostSeeRange: 2
+  nodeSensitivity: 3
+  ghostSeeRange: 3
   ghostLoseSightRange: 7
   rb: {fileID: 0}
   equipItem: {fileID: 0}
   stopChaseTime: 0
-  scareDistance: 2
+  scareDistance: 1
   player: {fileID: 0}
   foundChaseTarget: 0
   scaredYouUntil: 0

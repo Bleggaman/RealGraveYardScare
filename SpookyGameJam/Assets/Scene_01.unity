@@ -1502,12 +1502,17 @@ Prefab:
     - target: {fileID: 114482552399597074, guid: 1f0eb33ab30ed46d68fd3c5ea02a77c6,
         type: 2}
       propertyPath: ghostLoseSightRange
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 114482552399597074, guid: 1f0eb33ab30ed46d68fd3c5ea02a77c6,
         type: 2}
       propertyPath: reactionTime
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114482552399597074, guid: 1f0eb33ab30ed46d68fd3c5ea02a77c6,
+        type: 2}
+      propertyPath: flashLightSeeDist
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1f0eb33ab30ed46d68fd3c5ea02a77c6, type: 2}
@@ -7042,16 +7047,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 114482552399597074, guid: 1f0eb33ab30ed46d68fd3c5ea02a77c6,
+    - target: {fileID: 114931878984651552, guid: 1f0eb33ab30ed46d68fd3c5ea02a77c6,
         type: 2}
-      propertyPath: ghostSeeRange
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114482552399597074, guid: 1f0eb33ab30ed46d68fd3c5ea02a77c6,
-        type: 2}
-      propertyPath: scareDistance
-      value: 0.1
-      objectReference: {fileID: 0}
+      propertyPath: lookup
+      value: 
+      objectReference: {fileID: 2058450965}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1f0eb33ab30ed46d68fd3c5ea02a77c6, type: 2}
   m_IsPrefabParent: 0
@@ -8801,12 +8801,17 @@ Prefab:
     - target: {fileID: 114482552399597074, guid: 1f0eb33ab30ed46d68fd3c5ea02a77c6,
         type: 2}
       propertyPath: ghostLoseSightRange
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 114482552399597074, guid: 1f0eb33ab30ed46d68fd3c5ea02a77c6,
         type: 2}
       propertyPath: reactionTime
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114482552399597074, guid: 1f0eb33ab30ed46d68fd3c5ea02a77c6,
+        type: 2}
+      propertyPath: flashLightSeeDist
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1f0eb33ab30ed46d68fd3c5ea02a77c6, type: 2}
@@ -9726,7 +9731,7 @@ Prefab:
     - target: {fileID: 114482552399597074, guid: 1f0eb33ab30ed46d68fd3c5ea02a77c6,
         type: 2}
       propertyPath: ghostLoseSightRange
-      value: 1
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 114482552399597074, guid: 1f0eb33ab30ed46d68fd3c5ea02a77c6,
         type: 2}
@@ -9736,7 +9741,7 @@ Prefab:
     - target: {fileID: 114482552399597074, guid: 1f0eb33ab30ed46d68fd3c5ea02a77c6,
         type: 2}
       propertyPath: flashLightSeeDist
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1f0eb33ab30ed46d68fd3c5ea02a77c6, type: 2}
@@ -10749,7 +10754,7 @@ Light:
   serializedVersion: 8
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 1.6
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -11890,12 +11895,17 @@ Prefab:
     - target: {fileID: 114482552399597074, guid: 1f0eb33ab30ed46d68fd3c5ea02a77c6,
         type: 2}
       propertyPath: ghostLoseSightRange
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 114482552399597074, guid: 1f0eb33ab30ed46d68fd3c5ea02a77c6,
         type: 2}
       propertyPath: reactionTime
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114482552399597074, guid: 1f0eb33ab30ed46d68fd3c5ea02a77c6,
+        type: 2}
+      propertyPath: flashLightSeeDist
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1f0eb33ab30ed46d68fd3c5ea02a77c6, type: 2}
@@ -12351,12 +12361,17 @@ Prefab:
     - target: {fileID: 114482552399597074, guid: 1f0eb33ab30ed46d68fd3c5ea02a77c6,
         type: 2}
       propertyPath: ghostLoseSightRange
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 114482552399597074, guid: 1f0eb33ab30ed46d68fd3c5ea02a77c6,
         type: 2}
       propertyPath: reactionTime
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114482552399597074, guid: 1f0eb33ab30ed46d68fd3c5ea02a77c6,
+        type: 2}
+      propertyPath: flashLightSeeDist
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1f0eb33ab30ed46d68fd3c5ea02a77c6, type: 2}
@@ -12939,12 +12954,17 @@ Prefab:
     - target: {fileID: 114482552399597074, guid: 1f0eb33ab30ed46d68fd3c5ea02a77c6,
         type: 2}
       propertyPath: ghostLoseSightRange
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 114482552399597074, guid: 1f0eb33ab30ed46d68fd3c5ea02a77c6,
         type: 2}
       propertyPath: reactionTime
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114482552399597074, guid: 1f0eb33ab30ed46d68fd3c5ea02a77c6,
+        type: 2}
+      propertyPath: flashLightSeeDist
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1f0eb33ab30ed46d68fd3c5ea02a77c6, type: 2}
